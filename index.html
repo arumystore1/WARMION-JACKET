@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WARMION JACKET COMFY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --primary: #EE4D2D; --bg: #f5f5f5; --white: #fff; }
+        * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: #121212; padding-bottom: 90px; }
+        .container { max-width: 500px; margin: 0 auto; background: var(--white); min-height: 100vh; position: relative; }
+        
+        .product-swiper { width: 100%; aspect-ratio: 1/1; background: #000; }
+        
+        .p-info { padding: 16px; background: #fff; margin-bottom: 8px; }
+        .p-price-row { display: flex; align-items: baseline; gap: 8px; margin-bottom: 8px; }
+        .p-price-now { font-size: 20px; color: var(--primary); font-weight: 700; }
+        .p-price-was { font-size: 13px; color: #757575; text-decoration: line-through; }
+        .p-title { font-size: 16px; font-weight: 600; line-height: 1.4; color: #121212; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        
+        .t-section { padding: 16px; background: #fff; margin-bottom: 8px; }
+        .t-section-title { font-size: 14px; font-weight: 600; margin-bottom: 12px; color: #121212; }
+        
+        .variant-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+        .variant-chip { display: flex; align-items: center; gap: 6px; padding: 6px 12px; border: 1px solid #e0e0e0; border-radius: 4px; font-size: 12px; color: #121212; cursor: pointer; background: #fff; }
+        .variant-chip.active { border-color: var(--primary); background: #fdfdfd; color: var(--primary); font-weight: 500; }
+        .v-chip-img { width: 20px; height: 20px; border-radius: 2px; object-fit: cover; }
+
+        .btn-buy { width: 100%; background: var(--primary); color: #fff; border: none; padding: 14px; border-radius: 2px; font-weight: 600; font-size: 14px; text-transform: uppercase; }
+        .bottom-nav { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 500px; background: #fff; padding: 8px 16px; border-top: 1px solid #eee; z-index: 100; }
+
+        .desc-box { padding: 16px; background: #fff; margin-bottom: 8px; font-size: 13px; line-height: 1.6; color: #333; }
+        .desc-box img { max-width: 100%; height: auto; display: block; margin: 8px 0; border-radius: 4px; }
+
+        .shipping-promo { background: #e8f7f5; color: #009e86; padding: 8px 12px; font-size: 12px; font-weight: 500; display: flex; align-items: center; gap: 6px; margin: 0 16px 16px; border-radius: 4px; }
+        
+        /* Similar minimal styles for features/testimonials */
+        .feature-item { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid #f5f5f5; }
+        .feature-img { width: 60px; height: 60px; border-radius: 4px; background: #eee; object-fit: cover; }
+        
+        .testi-card { padding: 12px; border: 1px solid #eee; border-radius: 8px; margin-bottom: 12px; }
+        .testi-header { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
+        .testi-avatar { width: 24px; height: 24px; border-radius: 50%; background: #eee; }
+        .testi-name { font-size: 12px; font-weight: 600; }
+        .testi-text { font-size: 12px; color: #444; }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="swiper product-swiper" id="main-slider"><div class="swiper-wrapper"><div class="swiper-slide swiper-slide-video"><video class="slide-video" autoplay muted loop playsinline src="https://video.xx.fbcdn.net/o1/v/t2/f2/m366/AQOMnXwm13osnScOJJvl95f7dGszca3_pu7CgGmL8OX9M35_0_UCo0Bk_b_jK1r7RYPpYNmo6YTZrLfKhFxHreBr8La6vDL0ut6NBD7I41jM9g.mp4?_nc_cat=108&_nc_oc=AdmO8ZBDqbY5t7LFEDklf5ystvEpky01svkX4KEjhLQljKMnnW08qj5PSFyCrnFVzFE&_nc_sid=5e9851&_nc_ht=video.fsub32-2.fna.fbcdn.net&_nc_ohc=irBAcT4cw-0Q7kNvwGOOpjD&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNTc2LmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjg3NzUwNDU3ODU3OTQwOCwiYXNzZXRfYWdlX2RheXMiOjEwLCJ2aV91c2VjYXNlX2lkIjoxMDc5OSwiZHVyYXRpb25fcyI6MTUsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=94d3c70466339b01&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9CNDQ5N0MwNDdEQzZBNThFODhBMTI4QUFBMDdEQjg4Rl9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzY1NDU0MzkyQ0ZBN0REQTQ2RTMzMkY2RjJDN0NGMUFDX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACagr4_LvoWPAxUCKAJDMywXQC-ZmZmZmZoYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=HdQVpBPEnDpXP0z9j8EPRA&_nc_zt=28&oh=00_AftB6h-TgYRNvA3A6B-BVob1xAn0Th6ZGKYPhDbRXjxZiw&oe=69871274" style="width:100%; height:100%; object-fit:contain; background:#000;"></video></div><div class="swiper-slide"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80" id="main-product-img" style="width:100%; height:100%; object-fit:contain;"></div><div class="swiper-slide"><img src="https://cdn.orderonline.id/uploads/images_6774221770135747290.png"  style="width:100%; height:100%; object-fit:contain;"></div><div class="swiper-slide"><img src="https://cdn.orderonline.id/uploads/images_6876931770135369913.png"  style="width:100%; height:100%; object-fit:contain;"></div><div class="swiper-slide"><img src="https://cdn.orderonline.id/uploads/images_8627951770135380594.png"  style="width:100%; height:100%; object-fit:contain;"></div><div class="swiper-slide"><img src="https://cdn.orderonline.id/uploads/images_5081381770135392010.png"  style="width:100%; height:100%; object-fit:contain;"></div></div><div class="swiper-pagination"></div></div>
+        
+        <div class="p-info">
+            <div class="p-price-row">
+                <span class="p-price-now" id="display-price">Rp 189.999</span>
+                <span class="p-price-was">Rp 429.000</span>
+                <span style="font-size:10px; background:#fcebed; color:#d0021b; padding:2px 4px; border-radius:2px;">-56%</span>
+            </div>
+            <h1 class="p-title">WARMION JACKET COMFY</h1>
+            <div style="font-size:11px; color:#757575; margin-top:6px;">
+                ★ 4.9 (1.2RB) | 1.5RB+ terjual
+            </div>
+        </div>
+
+        <div class="shipping-promo"><i class="fas fa-truck"></i> Gratis Ongkir s/d Rp20.000</div>
+
+        
+        <div class="t-section">
+            <div class="t-section-header">
+                <div class="t-section-title">Varian</div>
+            </div>
+            <div class="variant-grid">
+                
+                    <div class="variant-chip active" onclick="selectVariant(this, '218015', 'BLACK / S', 'https://cdn.orderonline.id/uploads/images_3893031770135195277.png')">
+                        <img src="https://cdn.orderonline.id/uploads/images_3893031770135195277.png" class="v-chip-img">
+                        <span>BLACK / S</span>
+                    </div>
+                
+                    <div class="variant-chip " onclick="selectVariant(this, '218015', 'BLACK / M', 'https://cdn.orderonline.id/uploads/images_3893031770135195277.png')">
+                        <img src="https://cdn.orderonline.id/uploads/images_3893031770135195277.png" class="v-chip-img">
+                        <span>BLACK / M</span>
+                    </div>
+                
+                    <div class="variant-chip " onclick="selectVariant(this, '218015', 'BLACK / L', 'https://cdn.orderonline.id/uploads/images_3893031770135195277.png')">
+                        <img src="https://cdn.orderonline.id/uploads/images_3893031770135195277.png" class="v-chip-img">
+                        <span>BLACK / L</span>
+                    </div>
+                
+                    <div class="variant-chip " onclick="selectVariant(this, '218015', 'BLACK / XL', 'https://cdn.orderonline.id/uploads/images_3893031770135195277.png')">
+                        <img src="https://cdn.orderonline.id/uploads/images_3893031770135195277.png" class="v-chip-img">
+                        <span>BLACK / XL</span>
+                    </div>
+                
+                    <div class="variant-chip " onclick="selectVariant(this, '218015', 'BLACK / 2XL', 'https://cdn.orderonline.id/uploads/images_3893031770135195277.png')">
+                        <img src="https://cdn.orderonline.id/uploads/images_3893031770135195277.png" class="v-chip-img">
+                        <span>BLACK / 2XL</span>
+                    </div>
+                
+                    <div class="variant-chip " onclick="selectVariant(this, '218015', 'BLACK / 3XL', 'https://cdn.orderonline.id/uploads/images_3893031770135195277.png')">
+                        <img src="https://cdn.orderonline.id/uploads/images_3893031770135195277.png" class="v-chip-img">
+                        <span>BLACK / 3XL</span>
+                    </div>
+                
+            </div>
+            <div id="selected-variant-text" style="margin-top:8px; font-size:12px; color:#666;"></div>
+        </div>
+
+        <div class="t-section">
+            <div class="t-section-title">Deskripsi Produk</div>
+            <div class="desc-box">
+                WARMION JACKET COMFY 100% ORIGINAL PRODUCT
+Jangan tergiur dengan harga murah di seler lain !!
+            </div>
+            
+            <div style="margin-top:12px; padding-top:12px; border-top:1px solid #eee;">
+                <div class="t-section-title">Spesifikasi</div>
+                <div style="font-size:12px; color:#555; white-space: pre-wrap;">Bahan: Premium Quality
+Stok: Tersedia
+Garansi: 100% Original</div>
+            </div>
+        </div>
+        
+        
+        <div class="t-section">
+            <div class="t-section-title">Keunggulan</div>
+            
+                <div class="feature-item">
+                    <img src="https://cdn.orderonline.id/uploads/images_8627951770135380594.png" class="feature-img">
+                    <div>
+                        <div style="font-weight:600; font-size:13px;">Kehangatan Instan Maksimal</div>
+                        <div style="font-size:12px; color:#666;">Menjaga suhu tubuh tetap stabil dan hangat seketika tanpa rasa gerah, ideal untuk perlindungan cuaca dingin yang ekstrem.</div>
+                    </div>
+                </div>
+            
+                <div class="feature-item">
+                    <img src="https://cdn.orderonline.id/uploads/images_5081381770135392010.png" class="feature-img">
+                    <div>
+                        <div style="font-weight:600; font-size:13px;">Material Ultra Lembut</div>
+                        <div style="font-size:12px; color:#666;">Sensasi sentuhan selembut sutra yang memanjakan kulit, memberikan kenyamanan total sepanjang hari dalam setiap aktivitas Anda.</div>
+                    </div>
+                </div>
+            
+                <div class="feature-item">
+                    <img src="https://cdn.orderonline.id/uploads/images_3893031770135195277.png" class="feature-img">
+                    <div>
+                        <div style="font-weight:600; font-size:13px;">Desain Ergonomis Premium</div>
+                        <div style="font-size:12px; color:#666;">Potongan modern yang menyesuaikan siluet tubuh, menghadirkan tampilan elegan sekaligus kebebasan bergerak yang tak terbatas.</div>
+                    </div>
+                </div>
+            
+        </div>
+
+        
+        <div class="t-section">
+            <div class="t-section-title">Ulasan Pembeli</div>
+            
+                <div class="testi-card">
+                    <div class="testi-header">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134233-7r98u-lx5dvmdoycul7e_tn" class="testi-avatar">
+                        <div class="testi-name">Reza Pratama</div>
+                        <div style="color:#fec400; font-size:10px;">★★★★★</div>
+                    </div>
+                    <div class="testi-text">Jaketnya beneran comfy sesuai namanya. Bahannya lembut dan enak banget buat harian. Pengiriman juga sat set banget, sehari langsung sampai.</div>
+                </div>
+            
+                <div class="testi-card">
+                    <div class="testi-header">
+                        <img src="https://ui-avatars.com/api/?name=Valerie Wijaya" class="testi-avatar">
+                        <div class="testi-name">Valerie Wijaya</div>
+                        <div style="color:#fec400; font-size:10px;">★★★★★</div>
+                    </div>
+                    <div class="testi-text">Suka banget sama model Warmion ini! Kelihatan premium dan jahitannya rapi banget. Packing aman pake bubble wrap tebal. Recommended seller!</div>
+                </div>
+            
+                <div class="testi-card">
+                    <div class="testi-header">
+                        <img src="https://ui-avatars.com/api/?name=Dimas Nugraha" class="testi-avatar">
+                        <div class="testi-name">Dimas Nugraha</div>
+                        <div style="color:#fec400; font-size:10px;">★★★★★</div>
+                    </div>
+                    <div class="testi-text">Kualitas bahan juara sih, adem tapi tetep hangat pas dipake motoran malem. Ukuran sesuai deskripsi, nggak nyesel beli di sini.</div>
+                </div>
+            
+        </div>
+
+        <div id="order-section" class="t-section" style="padding-bottom:20px;">
+            <div style="text-align:center; margin-bottom:15px; font-weight:700; font-size:14px;">FORMULIR PEMESANAN</div>
+            <!-- OrderOnline Embed Code - v8.0.2 --> <div class="ooef"> <form class="orderonline-embed-form" data-username="nava" data-product-slug="warmion-jacket-comfy" data-product-id="69821d81ce8f099f310c19cd" id="oo-embed-form-warmion-jacket-comfy-7426" data-origin="orderonline"> <div class="ooef-loader"><style>.ooef-loader{visibility: hidden;opacity: 0;position: absolute;left: 0;right: 0;top: 0;bottom: 0;display: flex;justify-content: center;align-items: center;flex-direction: column;animation: ooLoadingIn 10s ease;-webkit-animation: ooLoadingIn 10s ease;animation-fill-mode: forwards;overflow: hidden}@keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}@-webkit-keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}.ooef-loader>div,.ooef-loader>div:after{border-radius: 50%;width: 2.5rem;height: 2.5rem}.ooef-loader>div{font-size: 10px;position: relative;text-indent: -9999em;border: .25rem solid #f5f5f5;border-left: .25rem solid #55c4cf;-webkit-transform: translateZ(0);-ms-transform: translateZ(0);transform: translateZ(0);-webkit-animation: ooLoading 1.1s infinite linear;animation: ooLoading 1.1s infinite linear}.ooef-loader.error>div{border-left: .25rem solid #ff4500;animation-duration: 5s}@-webkit-keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}@keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}</style><div aria-live="polite" role="status"><div>Loading...</div></div></div> </form> </div> <script> if (typeof xLogError != 'function') { var xLogError = function (error) { var req = new XMLHttpRequest(); var payload = JSON.stringify({ url: document.location.href, line: error.line, stack: error.stack }); var params = 'message=' + encodeURIComponent(error.name) + '&payload=' + encodeURIComponent(payload) + '&type=embed&level=error'; req.open('POST', 'https://api.orderonline.id/log', true); req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded'); req.send(params); }; } try { if (typeof xEmbedScript != 'function') { var xEmbedScript = function () { !function(w, d, e, v, id, t, s) { if (d.getElementById(id)) return; t = d.createElement(e);t.async = !0;t.src = v;t.id = id; s = d.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s); }(window, document, 'script', 'https://cdn.orderonline.id/js/embed-v2-slim.min.js?v=8.0.2', 'oo-embed-js'); }; } if (typeof xEmbedInit != 'function') { var xEmbedInit = function (w, n) { if (w.ooe) return; n = w.ooe = function() { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!w._ooe) w._ooe = n; n.push = n;n.loaded = !0;n.version = '8.0.2';n.queue = []; }; } xEmbedInit(window); ooe('setup', 'redirect', 'https://nava.orderonline.id'); ooe('init', '5f119cd08dcbdb2737678706', '69821d81ce8f099f310c19cd', '69821d81ce8f099f310c19ce', 'oo-embed-form-warmion-jacket-comfy-7426', {"mode":"page","action":"Klik untuk pemesanan","title":"Form Pemesanan","triggerPixel":true,"triggerGtm":false}); if (!window.jQuery) { !function(w, d, e, v, id, t, s) { if (d.getElementById(id)) return; t = d.createElement(e);t.async = !0;t.src = v;t.id = id; t.addEventListener('load', xEmbedScript); s = d.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s); }(window, document, 'script', 'https://cdn.orderonline.id/js/vendor/jquery.min.js', 'oo-embed-jquery'); } else { xEmbedScript(); } } catch (e) { xLogError(e); throw e; } </script> <!-- End OrderOnline Embed Code -->
+        </div>
+
+        <div class="bottom-nav">
+            <button class="btn-buy" onclick="scrollToOrder()">Beli Sekarang</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const mainSwiper = new Swiper('#main-slider', { 
+            pagination: { el: '.swiper-pagination', clickable: true },
+            autoplay: { delay: 4000 }
+        });
+
+        function selectVariant(el, price, name, image) {
+            document.querySelectorAll('.variant-chip').forEach(c => c.classList.remove('active'));
+            el.classList.add('active');
+            
+            document.getElementById('display-price').innerText = 'Rp ' + Number(price).toLocaleString('id-ID');
+            document.getElementById('selected-variant-text').innerText = 'Dipilih: ' + name;
+            
+            if (image) {
+                const mainImg = document.getElementById('main-product-img');
+                if (mainImg) {
+                    mainImg.src = image;
+                    mainSwiper.slideTo(0); // Assuming image is at index 0 or 1
+                }
+            }
+        }
+        
+        function scrollToOrder() { 
+          const target = document.getElementById('order-section');
+          if (target) target.scrollIntoView({ behavior: 'smooth' }); 
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+             const firstVariant = document.querySelector('.variant-chip');
+             if(firstVariant) firstVariant.click();
+        });
+    </script>
+</body>
+</html>
